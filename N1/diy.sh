@@ -30,17 +30,20 @@ git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-linkease
 echo "
 # 插件
 #CONFIG_PACKAGE_luci-theme-design=y
-CONFIG_PACKAGE_luci-app-mosdns=y
+CONFIG_PACKAGE_luci-app-store=y
 CONFIG_PACKAGE_luci-app-passwall=y
 CONFIG_PACKAGE_luci-app-lucky=y
 CONFIG_PACKAGE_luci-app-mihomo=y
-CONFIG_PACKAGE_luci-app-linkease=y
+CONFIG_PACKAGE_luci-app-diskman=y
+CONFIG_PACKAGE_luci-app-hd-idle=y
+CONFIG_PACKAGE_luci-app-homeproxy=y
+CONFIG_PACKAGE_luci-app-passwall2=y
 #CONFIG_PACKAGE_luci-app-turboacc=y
 " >> .config
 #CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
 
 # 修改默认IP
-sed -i 's/192.168.1.1/10.0.2.3/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.110.235/g' package/base-files/files/bin/config_generate
 
 # 修改默认主题
 sed -i 's/luci-theme-design/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
