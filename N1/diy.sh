@@ -20,12 +20,8 @@ git clone --depth=1 https://github.com/ophub/luci-app-amlogic package/amlogic
 #git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-unblockneteasemusic UnblockNeteaseMusic
 git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-linkease linkease linkmount ffmpeg-remux\
                                                                luci-app-lucky lucky\
-                                                               luci-app-mihomo mihomo\
-                                                               luci-app-turboacc\
-                                                               luci-app-store store\
-                                                               luci-app-diskman diskman\
-                                                               luci-app-homeproxy homeproxy\
-                                                               luci-app-passwall2 passwall2
+                                                               luci-app-mihomo mihomo
+                                                        
 # 加入OpenClash核心
 #chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
 #$GITHUB_WORKSPACE/N1/preset-clash-core.sh
