@@ -14,11 +14,11 @@ function git_sparse_clone() {
 }
 
 # Add packages
-git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
-git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+ # git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+# git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git clone --depth=1 https://github.com/ophub/luci-app-amlogic package/amlogic
-#git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-unblockneteasemusic UnblockNeteaseMusic
-git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-linkease linkease linkmount ffmpeg-remux\
+# git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-unblockneteasemusic UnblockNeteaseMusic
+# git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-linkease linkease linkmount ffmpeg-remux\
                                                                luci-app-lucky lucky\
                                                                luci-app-mihomo mihomo\
                                                                luci-app-passwall2 passwall2
@@ -27,22 +27,11 @@ git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-linkease
 #chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
 #$GITHUB_WORKSPACE/N1/preset-clash-core.sh
 
-echo "
-# 插件
-CONFIG_PACKAGE_luci-lib-taskd=y
-CONFIG_PACKAGE_luci-app-store=y
-CONFIG_PACKAGE_luci-app-passwall=y
-CONFIG_PACKAGE_luci-app-lucky=y
-CONFIG_PACKAGE_luci-app-mihomo=y
-CONFIG_PACKAGE_luci-app-linkease=y
-#CONFIG_PACKAGE_luci-app-turboacc=y
-CONFIG_PACKAGE_luci-app-passwall2=y
-CONFIG_PACKAGE_openssh-sftp-server=y
-" >> .config
+
 #CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
 
 # 修改默认IP
-sed -i 's/192.168.1.1/192.168.110.235/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.110.247/g' package/base-files/files/bin/config_generate
 
 # 修改默认主题
 sed -i 's/luci-theme-design/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
