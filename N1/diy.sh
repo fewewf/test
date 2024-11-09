@@ -17,7 +17,7 @@ function git_sparse_clone() {
  # git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 # git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git clone --depth=1 https://github.com/ophub/luci-app-amlogic package/amlogic
-# git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-unblockneteasemusic UnblockNeteaseMusic
+git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-passwall2 passwall2
 # git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-linkease linkease linkmount ffmpeg-remux\
                                                                luci-app-lucky lucky\
                                                                luci-app-mihomo mihomo\
