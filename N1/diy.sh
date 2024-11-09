@@ -18,8 +18,8 @@ function git_sparse_clone() {
 # git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git clone --depth=1 https://github.com/ophub/luci-app-amlogic package/amlogic
 # git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-passwall2 passwall2
- git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-mihomo mihomo ffmpeg-remux\
-                                                                luci-app-passwall2 passwall2
+ git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-mihomo mihomo ffmpeg-remux
+                                                                
 
                          
                                                         
@@ -27,15 +27,7 @@ git clone --depth=1 https://github.com/ophub/luci-app-amlogic package/amlogic
 #chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
 #$GITHUB_WORKSPACE/N1/preset-clash-core.sh
 
-echo "
-# 插件
-# CONFIG_PACKAGE_luci-theme-design=y
-CONFIG_PACKAGE_luci-app-mosdns=y
-CONFIG_PACKAGE_luci-app-passwall2=y
-# CONFIG_PACKAGE_luci-app-lucky=y
-CONFIG_PACKAGE_luci-app-mihomo=y
 
-" >> .config
 #CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
 
 # 修改默认IP
