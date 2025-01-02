@@ -24,7 +24,7 @@ git clone https://github.com/kenzok8/small.git  package/small
 rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
 rm -rf feeds/packages/utils/v2dat
 rm -rf feeds/packages/lang/golang                         
-                                                        
+git clone https://github.com/kenzok8/golang feeds/packages/lang/golang                                                        
 # 加入OpenClash核心
 #chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
 #$GITHUB_WORKSPACE/N1/preset-clash-core.sh
