@@ -19,15 +19,11 @@ function git_sparse_clone() {
 git clone --depth=1 https://github.com/ophub/luci-app-amlogic package/amlogic
 # git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-passwall2 passwall2
  # git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-mihomo mihomo ffmpeg-remux
-git clone https://github.com/kenzok8/openwrt-packages.git package/openwrt-packages                                                                
-git clone https://github.com/kenzok8/small.git  package/small
-rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
-rm -rf feeds/packages/utils/v2dat
-rm -rf feeds/packages/lang/golang                         
-git clone https://github.com/kenzok8/golang feeds/packages/lang/golang                                                        
-# 加入OpenClash核心
-#chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
-#$GITHUB_WORKSPACE/N1/preset-clash-core.sh
+git clone https://github.com/kenzok8/small-package package/small-package
+git clone https://github.com/xiaorouji/openwrt-passwall-packages package/passwall-packages 
+# sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
+# rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,luci-app-dogcom,transmission,natflow,wireless-regdb}
+rm -rf package/small-package/{base-files,dockerd,haproxy,transmission,natflow,luci-app-bandwidthd,luci-app-bypass,luci-app-dogcom}
 
 
 #CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
