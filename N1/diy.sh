@@ -18,9 +18,9 @@ function git_sparse_clone() {
 # git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git clone --depth=1 https://github.com/ophub/luci-app-amlogic package/amlogic
 # git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-passwall2 passwall2
- git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-mihomo mihomo ffmpeg-remux
-                                                                
-
+ # git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-mihomo mihomo ffmpeg-remux
+git clone https://github.com/kenzok8/openwrt-packages.git package/openwrt-packages                                                                
+git clone https://github.com/kenzok8/small.git  package/small
                          
                                                         
 # 加入OpenClash核心
