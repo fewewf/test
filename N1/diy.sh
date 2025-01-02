@@ -21,7 +21,9 @@ git clone --depth=1 https://github.com/ophub/luci-app-amlogic package/amlogic
  # git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-mihomo mihomo ffmpeg-remux
 git clone https://github.com/kenzok8/openwrt-packages.git package/openwrt-packages                                                                
 git clone https://github.com/kenzok8/small.git  package/small
-                         
+rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
+rm -rf feeds/packages/utils/v2dat
+rm -rf feeds/packages/lang/golang                         
                                                         
 # 加入OpenClash核心
 #chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
