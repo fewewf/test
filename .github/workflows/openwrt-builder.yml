@@ -119,12 +119,11 @@ jobs:
         KERNEL_AUTO_LATEST: true
         PACKAGE_SOC: s905d
         GZIP_IMGS: .xz
-        # SCRIPT_DIY_PATH: N1/mk_s905d_n1.sh
+        SCRIPT_DIY_PATH: N1/mk_s905d_n1.sh
         WHOAMI: Test
         SW_FLOWOFFLOAD: 0
         SFE_FLOW: 0
         ENABLE_WIFI_K510: 0
-
     - name: 生成发布标签
       if: ${{ env.PACKAGED_STATUS == 'success' && !cancelled() }} 
       run: |
@@ -153,12 +152,13 @@ jobs:
     - name: 发布固件到 Releases
       uses: ncipollo/release-action@v1
       if: ${{ env.PACKAGED_STATUS == 'success' }} && !cancelled()
-      env:
-       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+     
       with:
+        name: ${{ env.DATE }} | N1-OpenWrt 自动编译打包
         tag: OpenWrt_${{ env.PACKAGED_OUTPUTDATE }}
         artifacts: /opt/openwrt_packit/output/*
         allowUpdates: true
+        token: ${{ secrets.GITHUB_TOKEN }}
         body: |
           首次使用建议全新刷写
           * 基本信息
