@@ -151,16 +151,20 @@ jobs:
         echo "tag_status=success" >> $GITHUB_ENV
 
     - name: 发布固件到 Releases
-      uses: softprops/action-gh-release@master
-      if: ${{ env.tag_status == 'success' && env.PACKAGED_STATUS == 'success' && !cancelled() }}
+      uses: ncipollo/release-action@v1
+      if: ${{ env.PACKAGED_STATUS == 'success' }} && !cancelled()
+      env:
+       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: OpenWrt_${{ env.PACKAGED_OUTPUTDATE }}
-        files: |
-             ${{ env.PACKAGED_OUTPUTPATH }}/*.img.xz
-             ${{ github.workspace }}/openwrt/diffconfig
-        body_path: release.txt
-        token: ${{ secrets.GITHUB_TOKEN }}
-
+        tag: OpenWrt_${{ env.PACKAGED_OUTPUTDATE }}
+        artifacts: /opt/openwrt_packit/output/*
+        allowUpdates: true
+        body: |
+          首次使用建议全新刷写
+          * 基本信息
+          IP: 192.168.110.247
+          账户: root
+          密码: password
    # - name: 电报机器人信息通知
      # if: env.TELEGRAM_BOT_TOKEN && ${{ env.PACKAGED_STATUS == 'success' }} && !cancelled()
      # run: |
