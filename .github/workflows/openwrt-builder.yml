@@ -155,7 +155,7 @@ jobs:
       if: ${{ env.PACKAGED_STATUS == 'success' }} && !cancelled()
      
       with:
-        name: ${{ env.DATE }} | N1-OpenWrt 自动编译打包
+        
         tag: OpenWrt_${{ env.PACKAGED_OUTPUTDATE }}
         artifacts: /opt/openwrt_packit/output/*
         allowUpdates: true
